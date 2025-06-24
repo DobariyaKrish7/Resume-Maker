@@ -24,9 +24,15 @@
 import React, { useContext, useState } from 'react';
 import { LayoutTemplate, Menu, X } from 'lucide-react';
 import { landingPageStyles } from '../assets/dummystyle.js';
+import { UserContext } from '../../context/UserContext.jsx';
+import {useNavigate} from 'react-router-dom';
+
+
 
 function Landingpage() {
   const {user} = useContext(UserContext)
+  const navigate = useNavigate();
+  const [openAuthModal , setOpenAuthModal] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -44,7 +50,7 @@ function Landingpage() {
             </span>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button*/}
           <button
             className={landingPageStyles.mobileMenuButton}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -54,15 +60,149 @@ function Landingpage() {
             ) : (
               <Menu size={24} className={landingPageStyles.mobileMenuIcon} />
             )}
-          </button>
+          </button> 
+
+            
+             <div className='hidden md:flex items-centr'>
+              {user ? (
+                <ProfileInfoCard/>
+              ) : (
+                 <button className={landingPageStyles.desktopAuthButton} onClick={()=> setOpenAuthModal(true)}>
+                  <div className={landingPageStyles.desktopAuthButtonOverlay}></div>
+                  <span className={landingPageStyles.desktopAuthButtonText}>
+                    Get Started
+                  </span>
+                </button>
+              
+              )}
+            </div> 
+            
 
         </div>
+        {/* mobile menu */}
+        {
+        mobileMenuOpen && (
+          <div className={landingPageStyles.mobileMenu}>
+            <div className={landingPageStyles.mobileMenuContainer}>
+              {user ?(
+                <div className={landingPageStyles.mobileUserInfo}>
+                    <div className={landingPageStyles.mobileUserWelcome}>
+                       welcome back
+                    </div>
+                    <button className={landingPageStyles.mobileDashboardButton}
+                    onClick={() => {
+                      navigate('/dashboard')
+                      setMobileMenuOpen(false)
+                    }}>
+                        Go to dashboard
+                    </button>
+                </div>
+              ) : (
+                <button className={landingPageStyles.mobileAuthButton}
+                onClick={() =>{
+                  setOpenAuthModal(true)
+                  setMobileMenuOpen(false)
+                }}>
+                  Get Started
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </header>
     </div>
   );
 }
 
 export default Landingpage;
+
+
+// import React, { useContext, useState } from 'react';
+// import { LayoutTemplate, Menu, X } from 'lucide-react';
+// import { landingPageStyles } from '../assets/dummystyle.js';
+// import { UserContext } from '../../context/UserContext.jsx';
+// import { useNavigate } from 'react-router-dom';
+// import { ProfileInfoCard } from '../componets/Cards.jsx';
+
+// function Landingpage() {
+//   const { user } = useContext(UserContext);
+//   const navigate = useNavigate();
+//   const [openAuthModal, setOpenAuthModal] = useState(false);
+//   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+//   return (
+//     <div className={landingPageStyles.container}>
+//       <header className={landingPageStyles.header}>
+//         <div className={landingPageStyles.headerContainer}>
+//           {/* Logo */}
+//           <div className={landingPageStyles.logoContainer}>
+//             <div className={landingPageStyles.logoIcon}>
+//               <LayoutTemplate className={landingPageStyles.logoIconInner} />
+//             </div>
+//             <span className={landingPageStyles.logoText}>Resume Xprts</span>
+//           </div>
+
+//           {/* Mobile Menu Button */}
+//           <button
+//             className={landingPageStyles.mobileMenuButton}
+//             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+//           >
+//             {mobileMenuOpen ? (
+//               <X size={24} className={landingPageStyles.mobileMenuIcon} />
+//             ) : (
+//               <Menu size={24} className={landingPageStyles.mobileMenuIcon} />
+//             )}
+//           </button>
+
+//           {/* Desktop Auth/Profile Section */}
+//           <div className="hidden md:flex items-center">
+//             {user ? (
+//               <ProfileInfoCard />
+//             ) : (
+//               <button
+//                 className={landingPageStyles.desktopAuthButton}
+//                 onClick={() => setOpenAuthModal(true)}
+//               >
+//                 <div className={landingPageStyles.desktopAuthButtonOverlay}></div>
+//                 <span className={landingPageStyles.desktopAuthButtonText}>Get Started</span>
+//               </button>
+//             )}
+//           </div>
+//         </div>
+
+//         {/* Mobile Menu Dropdown */}
+//         {mobileMenuOpen && (
+//           <div className={landingPageStyles.mobileMenu}>
+//             <div className={landingPageStyles.mobileMenuContainer}>
+//               {user ? (
+//                 <div className={landingPageStyles.mobileUserInfo}>
+//                   <p className={landingPageStyles.mobileUserWelcome}>
+//                     Welcome, {user.name}
+//                   </p>
+//                   <button className={landingPageStyles.mobileDashboardButton} onClick={() => navigate('/dashboard')}>
+//                     Go to Dashboard
+//                   </button>
+//                 </div>
+//               ) : (
+//                 <button
+//                   className={landingPageStyles.mobileAuthButton}
+//                   onClick={() => setOpenAuthModal(true)}
+//                 >
+//                   Login / Register
+//                 </button>
+//               )}
+//             </div>
+//           </div>
+//         )}
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default Landingpage;
+
+
+
 
 
 
