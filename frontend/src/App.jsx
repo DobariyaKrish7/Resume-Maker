@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Landingpage from './pages/Landingpage.jsx' // ✅ Capitalized import
+import Landingpage from './pages/Landingpage.jsx'
 import UserProvider from '../context/UserContext.jsx'
 
 const App = () => {
