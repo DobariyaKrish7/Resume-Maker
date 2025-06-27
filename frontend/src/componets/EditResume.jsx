@@ -579,7 +579,7 @@ const EditResume = () => {
       }
     `;
     document.head.appendChild(override);
-  
+  //html2pdf
     try {
       await html2pdf()
         .set({
@@ -634,6 +634,8 @@ const EditResume = () => {
       fetchResumeDetailsById()
     }
   }, [resumeId])
+
+  //3.53
 
 //delets function 
   const handleDeleteResume = async () => {
