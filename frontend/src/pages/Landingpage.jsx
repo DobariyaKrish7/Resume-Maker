@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Modal from "../componets/Modal.jsx"
 import Login from "../componets/Login.jsx";
 import SignUp from "../componets/Signup.jsx";
+import { ProfileInfoCard } from '../componets/Cards.jsx';
 
 
 
@@ -336,6 +337,9 @@ function Landingpage() {
 
     </div>
   </Modal>
+  
+  
+
 
     </div>
   );

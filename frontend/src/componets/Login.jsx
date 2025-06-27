@@ -5,7 +5,7 @@ import { UserContext } from '../../context/UserContext';
 import { validateEmail } from '../utils/helper';
 import axiosInstance from '../utils/axiosInstance';
 import { API_PATHS } from '../utils/apiPath';
-import Input from '../componets/Input';
+import { Input } from './Inputs';
 
 const Login = ({ setCurrentPage }) => {
   const [email, setEmail] = useState('');
@@ -92,3 +92,101 @@ const Login = ({ setCurrentPage }) => {
 };
 
 export default Login;
+
+
+// import React, { useState, useContext } from 'react';
+// import { authStyles as styles } from '../assets/dummystyle';
+// import { UserContext } from '../../context/UserContext';
+// import { useNavigate } from 'react-router-dom';
+// import { validateEmail } from '../utils/helper';
+// import axiosInstance from '../utils/axiosInstance';
+// import { API_PATHS } from '../utils/apiPath';
+// import { Input } from './Inputs';
+
+// const Login = ({ setCurrentPage }) => {
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [error, setError] = useState(null);
+//   const { updateUser } = useContext(UserContext);
+//   const navigate = useNavigate();
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+
+//     if (!validateEmail(email)) {
+//       setError('Enter a valid email');
+//       return;
+//     }
+
+//     if (!password) {
+//       setError('Please enter your password');
+//       return;
+//     }
+
+//     setError(null);
+
+//     try {
+//       const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, {
+//         email,
+//         password,
+//       });
+
+//       const { token } = response.data;
+//       if (token) {
+//         localStorage.setItem('token', token);
+//         updateUser(response.data);
+//         navigate('/dashboard');
+//       }
+//     } catch (error) {
+//       setError(error.response?.data?.message || 'Something went wrong');
+//     }
+//   };
+
+//   return (
+//     <div className={styles.signupContainer}>
+//       <div className={styles.headerWrapper}>
+//         <h3 className={styles.signupTitle}>Welcome Back</h3>
+//         <p className={styles.signupSubtitle}>
+//           Log in to continue crafting your resume
+//         </p>
+//       </div>
+
+//       <form onSubmit={handleLogin} className={styles.signupForm}>
+//         <Input
+//           value={email}
+//           onChange={({ target }) => setEmail(target.value)}
+//           label="Email"
+//           placeholder="email@example.com"
+//           type="email"
+//         />
+
+//         <Input
+//           value={password}
+//           onChange={({ target }) => setPassword(target.value)}
+//           label="Password"
+//           placeholder="Enter your password"
+//           type="password"
+//         />
+
+//         {error && <div className={styles.errorMessage}>{error}</div>}
+
+//         <button type="submit" className={styles.signupSubmit}>
+//           Log In
+//         </button>
+
+//         <p className={styles.switchText}>
+//           Don’t have an account?{' '}
+//           <button
+//             onClick={() => setCurrentPage('signup')}
+//             type="button"
+//             className={styles.signupSwitchButton}
+//           >
+//             Create one
+//           </button>
+//         </p>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Login;
