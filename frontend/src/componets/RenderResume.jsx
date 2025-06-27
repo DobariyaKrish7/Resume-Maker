@@ -1,7 +1,7 @@
 import React from 'react';
 import TemplateOne from './TemplateOne';
  import TemplateTwo from './TemplateTwo';
- import TemplateThree from './TemplateThree'; // Uncomment when TemplateTwo is available
+ import TemplateThree from './TemplateThree'; 
 
 const RenderResume = ({
   templateId,

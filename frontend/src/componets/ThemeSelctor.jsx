@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import {resumeTemplates} from '../utils/data'
+import {DUMMY_RESUME_DATA, resumeTemplates} from '../utils/data'
 import { Check } from 'lucide-react'
 import { TemplateCard } from './Cards'
 
@@ -30,6 +30,17 @@ const ThemeSelctor = ({selectedTheme,setselectedTheme,resumeData,onClose}) => {
             }
         }
 
+    useEffect(() => {
+      updateBaseWidth();
+
+      window.addEventListener("resize", updateBaseWidth);
+
+      return () => {
+        window.removeEventListener("resize", updateBaseWidth);
+      };
+    }, []);
+
+
 
 
   return (
@@ -59,7 +70,7 @@ const ThemeSelctor = ({selectedTheme,setselectedTheme,resumeData,onClose}) => {
             thumbnailImg={template.thumbnailImg}
             isSelected={selectedTemplate.index === index}
             onSelect={() =>
-            setSelectedTemplate({
+            setselectedTemplate({
                 theme: template.id,
                 index,
             })
@@ -70,7 +81,12 @@ const ThemeSelctor = ({selectedTheme,setselectedTheme,resumeData,onClose}) => {
         </div>
         </div>
         {/*right*/}
-        <div
+        <div className='lg:col-span-3 bg-white rounded-2xl border border-gray-100 p-4 sm:p-6'>
+            <RenderResume templateId ={selectedTemplate?.theme || ""}
+            resumeData = {resumeData || DUMMY_RESUME_DATA} containerWidth={basewidth} />
+        </div>
+        
+        
     </div>
 
   </div>
