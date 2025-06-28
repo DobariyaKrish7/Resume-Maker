@@ -35,7 +35,7 @@ const CreateResumeForm = () => {
       }
     }
 
-    navigate('/resume-preview'); // Update this path as per your routing
+    // navigate(''); // Update this path as per your routing
   };
 
   return (

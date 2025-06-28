@@ -31,6 +31,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Landingpage />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path="/resume-preview" element={<EditResume />} />
         <Route path='/resume/:resumeId' element={<EditResume/>}/>
       </Routes>
 
@@ -47,4 +48,3 @@ const App = () => {
 };
 
 export default App;
-

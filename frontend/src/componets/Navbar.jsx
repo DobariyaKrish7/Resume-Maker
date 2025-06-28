@@ -24,7 +24,7 @@ const Navbar = () => {
               text-transparent
             ">
               {/* Your gradient text here */}
-              Resume Expert
+              Resume Builder
             </span>
 
           </div>

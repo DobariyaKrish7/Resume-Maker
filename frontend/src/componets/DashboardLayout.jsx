@@ -7,7 +7,7 @@ const DashboardLayout = ({activeMenu,children}) => {
     const {user} = useContext(UserContext);
 
   return (
-    <div>DashboardLayout
+    <div>
         <Navbar activeMenu={activeMenu} user={user} />
         {user && <div className='conatiner mx-auto pt-4 pb-4'>{children}</div>}
     </div>

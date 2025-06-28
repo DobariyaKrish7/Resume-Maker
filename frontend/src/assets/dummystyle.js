@@ -498,4 +498,3 @@ export const infoStyles = {
   workDesc: "text-sm text-gray-600 font-medium leading-relaxed"
 };
 
-

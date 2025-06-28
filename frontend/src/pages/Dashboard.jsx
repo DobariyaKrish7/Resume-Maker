@@ -420,17 +420,25 @@ const Dashboard = () => {
                 : 'You have no resume'}
             </p>
           </div>
-          <div className="flex gap-4">
-            <button className={styles.createButton} onClick={() => setOpenCreateModal(true)}>
-              <div className={styles.createButtonOverlay}>
-                <span className={styles.createButtonContent}>
-                  Create Resume
-                  <LucideFilePlus className="group-hover:translate-x-1 transition-transform" size={18} />
-                </span>
-              </div>
+          
+          {/* <div className="flex gap-4">
+            <button
+              onClick={() => setOpenCreateModal(true)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-violet-600 text-white font-bold hover:scale-105 transition-transform shadow-lg"
+            >
+              <span className="whitespace-nowrap">Create Resume</span>
+              <LucideFilePlus className="transition-transform group-hover:translate-x-1" size={18} />
             </button>
-          </div>
-        </div>
+          </div>*/}
+          <button className={styles.createButton} onClick={() => setOpenCreateModal(true)}>
+              <div className={styles.createButtonOverlay}></div>
+              <span className={styles.createButtonContent}>
+                Create Resume
+                <LucideFilePlus className="group-hover:translate-x-1 transition-transform" size={20} />
+              </span>
+            </button>
+
+        </div> 
 
         {loading && (
           <div className={styles.spinnerWrapper}>
@@ -450,7 +458,7 @@ const Dashboard = () => {
             <button className={styles.createButton} onClick={() => setOpenCreateModal(true)}>
               <div className={styles.createButtonOverlay}></div>
               <span className={styles.createButtonContent}>
-                Create Resume
+                Build Resume
                 <LucideFilePlus className="group-hover:translate-x-1 transition-transform" size={20} />
               </span>
             </button>
@@ -478,7 +486,6 @@ const Dashboard = () => {
                 onDelete={() => handleDeleteClick(resume._id)} // ✅ FIXED HERE
                 completion={resume.completion || 0}
                 isPremium={resume.isPremium}
-                // isNew={moment().diff(moment(resume.createdAt), 'days') < 7}
                 isNew={dayjs().diff(dayjs(resume.createdAt), 'day') < 7}
               />
             ))}

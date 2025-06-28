@@ -346,4 +346,3 @@ function Landingpage() {
 }
 
 export default Landingpage;
-
