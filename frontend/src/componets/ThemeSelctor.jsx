@@ -1,7 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {DUMMY_RESUME_DATA, resumeTemplates} from '../utils/data'
 import { Check } from 'lucide-react'
 import { TemplateCard } from './Cards'
+import Tabs from './Tabs'; // adjust the path if it's in a different folder
+import RenderResume from './RenderResume';
+
 
 const TAB_DATA = [{label : 'Templates'}]
 const ThemeSelctor = ({selectedTheme,setselectedTheme,resumeData,onClose}) => {
@@ -47,10 +50,10 @@ const ThemeSelctor = ({selectedTheme,setselectedTheme,resumeData,onClose}) => {
   <div className='max-w-7xl mx-auto px-4'>
     {/* header */}
     <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 p-4 sm:p-6 bg-gradient-to-r from-white to-violet-50 rounded-2xl border border-violet-100'>
-      <Tabs 
+      <Tabs
         tabs={TAB_DATA} 
         activeTab={tabValue} 
-        setActiveTab={setActiveTab} 
+        setActiveTab={setTabValue} 
       />
 
       <button
