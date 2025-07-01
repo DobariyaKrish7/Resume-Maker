@@ -724,7 +724,7 @@ const EditResume = () => {
                             </button>
 
                             <button className={buttonStyles.save} onClick={uploadResumeImages} disabled={isLoading}>
-                                {isLoading ? <Leader2 size={16} className='animate-spin'/>
+                                {isLoading ? <Loader2 size={16} className='animate-spin'/>
                                 : <Save size={16} />  }  
                                     {isLoading ? "Saving..." : "Save and Exit"}
                     
