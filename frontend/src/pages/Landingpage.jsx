@@ -319,8 +319,8 @@ function Landingpage() {
   <footer className={landingPageStyles.footer}>
     <div className={landingPageStyles.footerContainer}>
       <p className={landingPageStyles.footerText}>
-         Created by me {/*<span className={landingPageStyles.footerHeart}> ❤ </span> by{' '}
-        <a href="https://hexagondigitalservices.com/" target='_blank' className={landingPageStyles.footerLink}></a> */}
+         Created by KD<span className={landingPageStyles.footerHeart}> ❤ </span> 
+       {/* <a href="https://hexagondigitalservices.com/" target='_blank' className={landingPageStyles.footerLink}></a> */}
       </p>
     </div>
   </footer>

@@ -752,7 +752,7 @@ const EditResume = () => {
                             <div className={containerStyles.previewInner}>
                               <RenderResume
                                   key={`preview-${resumeData?.template?.theme}`}
-                                  templateId={resumeData?.template?.theme || "01"}
+                                  templateId={resumeData.template.theme}
                                   resumeData={resumeData}
                                   containerWidth={previewWidth}
                               />
