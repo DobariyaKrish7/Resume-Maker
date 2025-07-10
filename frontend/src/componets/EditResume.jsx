@@ -11,7 +11,7 @@ import { AlertCircle, ArrowLeft, Check, Download, Loader2, Palette, Save } from 
 import axiosInstance from '../utils/axiosInstance'
 import { API_PATHS } from '../utils/apiPath'
 import toast from 'react-hot-toast'
-import { fixTailwindColors } from '../utils/Color'
+import { fixTailwindColors } from '../utils/Colors'
 import html2pdf from 'html2pdf.js'
 import StepProgress from './StepProgress'
 import { AdditionalInfoForm, CertificationInfoForm, ContactInfoForm, EducationDetailsForm, ProfileInfoForm, ProjectDetailForm, SkillsInfoForm, WorkExperienceForm } from './Forms'

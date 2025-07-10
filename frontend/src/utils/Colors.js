@@ -1,4 +1,4 @@
-// src/utils/colors.js
+// src/utils/Colors.js
 export const fixTailwindColors = (element) => {
   const clone = element.cloneNode(true);
   clone.style.position = 'absolute';
