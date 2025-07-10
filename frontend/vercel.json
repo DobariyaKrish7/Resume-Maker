@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://resume-maker-7v7j.onrender.com/api/:match*"
+    }
+  ]
+}
