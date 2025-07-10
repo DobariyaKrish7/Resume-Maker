@@ -1,19 +1,4 @@
-// import React, { useCallback, useEffect, useRef, useState } from 'react'
-// import DashboardLayout from './DashboardLayout'
-// import { buttonStyles, commonStyles, containerStyles, iconStyles, statusStyles } from '../assets/dummystyle'
-// import { TitleInput } from './Inputs'
-// import { useNavigate, useParams } from 'react-router-dom'
-// import { AlertCircle, ArrowLeft, Download, Loader2, Palette, Save } from 'lucide-react'
-// import axiosInstance from '../utils/axiosInstance'
-// import { API_PATHS } from '../utils/apiPath'
-// import toast from 'react-hot-toast'
-// import { fixTailwindColors } from '../utils/Color'
-// import html2pdf from 'html2pdf.js'
-// import StepProgress from './StepProgress'
-// import { ContactInfoForm, ProfileInfoForm } from './Forms'
-// import ThemeSelctor from './ThemeSelctor'
-// import RenderResume from './RenderResume'
-// import Modal from './Modal'
+
 import html2canvas from "html2canvas"
 import { dataURLtoFile } from '../utils/helper'
 
