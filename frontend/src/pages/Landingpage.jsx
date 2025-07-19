@@ -32,7 +32,7 @@ function Landingpage() {
             <div className={landingPageStyles.logoIcon}>
               <LayoutTemplate className={landingPageStyles.logoIconInner} />
             </div>
-            <span className={landingPageStyles.logoText}>Resume Xprts</span>
+            <span className={landingPageStyles.logoText}>Resume Builder</span>
           </div>
 
           <button
@@ -88,7 +88,7 @@ function Landingpage() {
       <main className={landingPageStyles.main}>
         <section className={landingPageStyles.heroSection}>
           <div className={landingPageStyles.heroLeft}>
-            <div className={landingPageStyles.tagline}>Resume Bilder</div>
+            <div className={landingPageStyles.tagline}>Resume Builder</div>
 
             <h1 className={landingPageStyles.heading}>
               <span className={landingPageStyles.headingGradient}>Craft</span>
