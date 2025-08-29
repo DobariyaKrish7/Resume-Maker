@@ -1,7 +1,5 @@
 # 📄 Resume Builder Website  
 
-![GitHub repo size](https://github.com/DobariyaKrish7/Resume-Maker)  
-
 A modern and responsive **Resume Builder Web Application** that allows users to **create, customize, and download resumes** in real-time.  
 Designed for students and professionals to build resumes quickly with ease.  
 
