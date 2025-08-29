@@ -5,8 +5,8 @@
 A modern and responsive **Resume Builder Web Application** that allows users to **create, customize, and download resumes** in real-time.  
 Designed for students and professionals to build resumes quickly with ease.  
 
-🔗 **Live Demo:** [Resume Builder Frontend](https://resume-builder.vercel.app)  
-📡 **Backend API:** [Resume Builder API](https://resume-builder-api.onrender.com)  
+🔗 **Live Demo:** [Resume Builder](https://resume-maker-dk.vercel.app/)  
+ 
 
 ---
 
